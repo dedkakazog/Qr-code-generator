@@ -25,6 +25,7 @@ public class GUI  extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
+        setIconImage(createDefaultIcon());
     }
 
     private void createComponents() {
@@ -73,6 +74,23 @@ public class GUI  extends JFrame {
         clearButton.addActionListener(e -> clearQRCode());
 
         textField.addActionListener(e -> generateQRCode());
+    }
+
+    private Image createDefaultIcon() {
+        BufferedImage icon = new BufferedImage(32, 32, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2d = icon.createGraphics();
+
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        g2d.setColor(Color.BLUE);
+        g2d.fillRect(0, 0, 32, 32);
+
+        g2d.setColor(Color.WHITE);
+        g2d.setFont(new Font("Arial", Font.BOLD, 18));
+        g2d.drawString("QR", 2, 22);
+
+        g2d.dispose();
+        return icon;
     }
 
     private void generateQRCode() {
