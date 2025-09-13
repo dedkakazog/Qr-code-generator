@@ -71,6 +71,7 @@ public class GUI  extends JFrame {
         /*// Обработчик для кнопки сохранения
         saveButton.addActionListener(e -> saveQRCode());*/
 
+
         clearButton.addActionListener(e -> clearQRCode());
 
         textField.addActionListener(e -> generateQRCode());

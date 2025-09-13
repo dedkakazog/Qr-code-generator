@@ -12,6 +12,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.Scanner;
 
+
 public class QRCodeGenerator {
     private static final int width = 300;
     private static final int height = 300;
